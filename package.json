@@ -2,7 +2,7 @@
   "name": "starter-nestjs",
   "version": "0.0.1",
   "description": "",
-  "author": "",
+  "author": "CHOTIPAT POOWONGTHANARAT",
   "license": "MIT",
   "scripts": {
     "build": "rimraf dist && tsc -p tsconfig.build.json",
@@ -26,8 +26,12 @@
     "@nestjs/platform-fastify": "^6.6.1",
     "class-transformer": "^0.2.3",
     "class-validator": "^0.10.0",
+    "dotenv": "^8.1.0",
+    "include-all": "^4.0.3",
+    "loadsh": "^0.0.4",
     "mongoose": "^5.6.11",
     "reflect-metadata": "^0.1.12",
+    "require-all": "^3.0.0",
     "rimraf": "^2.6.2",
     "rxjs": "^6.3.3"
   },

@@ -1,15 +1,20 @@
 import { Module } from '@nestjs/common';
-import { AppController } from './app.controller';
-import { AppService } from './app.service';
+import { ConfigModule } from './config/config.module';
+import { ConfigService } from './config/config.service';
 import { MongooseModule } from '@nestjs/mongoose';
+import { loader } from './utils/loader';
 
 @Module({
   imports: [
-    MongooseModule.forRoot('mongodb://admin:root@localhost:27017/test', {
-      useNewUrlParser: true,
+    MongooseModule.forRootAsync({
+      imports: [ConfigModule],
+      inject: [ConfigService],
+      useFactory: async (config: ConfigService) => ({
+        uri: config.get('MONGO_DB_URI'),
+        useNewUrlParser: true,
+      }),
     }),
+    ...loader(__dirname, 'module.ts'),
   ],
-  controllers: [AppController],
-  providers: [AppService],
 })
 export class AppModule {}
