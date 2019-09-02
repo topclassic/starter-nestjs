@@ -1,15 +1,12 @@
 import { Model } from 'mongoose';
-import { Injectable } from '@nestjs/common';
-import { InjectModel } from '@nestjs/mongoose';
+import { Injectable, Inject } from '@nestjs/common';
 import { UserDto } from './user.dto';
 import { UserInput } from './input/user.input';
 import { of, Observable } from 'rxjs';
 
 @Injectable()
 export class UserService {
-  constructor(
-    @InjectModel('User') private readonly userModel: Model<UserDto>,
-  ) {}
+  constructor(@Inject('User') private readonly userModel: Model<UserDto>) {}
   createUser(body: UserInput): Observable<UserInput> {
     this.userModel(body).save();
     return of(body);
