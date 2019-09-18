@@ -1,6 +1,6 @@
 ## Start
 
-This is starter project from nestjs https://nestjs.com/
+This is starter project develop from nestjs https://nestjs.com/
 
 You can connect mongo and redis with https://github.com/topclassic/data-environment
 
@@ -13,7 +13,7 @@ $ yarn install
 
 ```
 
-## Running on develop environment
+## Running the app
 
 ```bash
 $ yarn dev
