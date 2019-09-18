@@ -1,14 +1,14 @@
 import { Module } from '@nestjs/common';
 import { loader } from '../utils/loader';
 import { Connection } from 'mongoose';
-import { UserSchema } from './user.schema';
+import { UserSchema } from './container/schema';
 import { DatabaseModule } from '../database/database.module';
 @Module({
   imports: [DatabaseModule],
-  controllers: loader(__dirname, 'controller.ts'),
+  controllers: loader(__dirname, /^(controller)\.(js|ts)$/),
   providers: [
-    ...loader(__dirname, 'service.ts'),
-    ...loader(__dirname, 'resolver.ts'),
+    ...loader(__dirname, /^(service)\.(js|ts)$/),
+    ...loader(__dirname, /^(resolver)\.(js|ts)$/),
     {
       inject: ['MONGO_CONNECTION'],
       provide: 'User',
@@ -16,5 +16,6 @@ import { DatabaseModule } from '../database/database.module';
         connection.model('User', UserSchema),
     },
   ],
+  exports: [...loader(__dirname, /^(.+service)\.(js|ts)$/)],
 })
 export class UserModule {}

@@ -1,0 +1,8 @@
+version: '3.5'
+
+services:
+  nest:
+    build: .
+    expose:
+      - '3000'
+    network_mode: 'host'

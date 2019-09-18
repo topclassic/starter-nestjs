@@ -1,7 +1,7 @@
 import { Model } from 'mongoose';
 import { Injectable, Inject } from '@nestjs/common';
-import { UserDto } from './user.dto';
-import { UserInput } from './input/user.input';
+import { UserDto } from './dto';
+import { UserInput } from './input';
 import { of, Observable } from 'rxjs';
 
 @Injectable()

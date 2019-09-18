@@ -1,17 +1,21 @@
+## Start
+
+This is starter project from nestjs https://nestjs.com/
+
+You can connect mongo and redis with https://github.com/topclassic/data-environment
+
+* Ignore .env when your deploy to production
+
 ## Installation
-
-This is starter project from nestjs with module base and you can use mongo graphql and api in this repo
-
-You can connect mongodb with https://github.com/topclassic/data-environment
 
 ```bash
 $ yarn install
 
 ```
 
-## Running the app
+## Running on develop environment
 
 ```bash
-$ yarn run start
+$ yarn dev
 
 ```

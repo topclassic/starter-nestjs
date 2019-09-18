@@ -1,6 +1,6 @@
 import * as requireAll from 'require-all';
 
-export const loader = (dirname: String, filter: String): any => {
+export const loader = (dirname: String, filter: RegExp): any => {
   var path = requireAll({
     dirname,
     filter,

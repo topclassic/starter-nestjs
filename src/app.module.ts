@@ -7,7 +7,7 @@ import { loader } from './utils/loader';
     GraphQLModule.forRoot({
       autoSchemaFile: 'schema.gql',
     }),
-    ...loader(__dirname, 'module.ts'),
+    ...loader(__dirname, /^(.+module)\.(js|ts)$/),
   ],
 })
 export class AppModule {}

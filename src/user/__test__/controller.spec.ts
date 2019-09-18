@@ -1,6 +1,6 @@
 import { Test, TestingModule } from '@nestjs/testing';
-import { UserController } from '../user.controller';
-import { UserService } from '../user.service';
+import { UserController } from '../container/controller';
+import { UserService } from '../container/service';
 
 describe('UserController', () => {
   let userController: UserController;
@@ -16,7 +16,7 @@ describe('UserController', () => {
 
   describe('root', () => {
     it('should return "Hello World!"', () => {
-      expect(userController.getHello()).toBe('Hello World!');
+      expect(userController.getHello).toBe('Hello World!');
     });
   });
 });
