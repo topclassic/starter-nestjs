@@ -1,6 +1,7 @@
 {
   "compilerOptions": {
     "module": "commonjs",
+    "esModuleInterop": true,
     "declaration": true,
     "removeComments": true,
     "emitDecoratorMetadata": true,
@@ -8,8 +9,21 @@
     "target": "es2017",
     "sourceMap": true,
     "outDir": "./dist",
-    "baseUrl": "./",
-    "incremental": true
+    "baseUrl": "src",
+    "types": ["node"],
+    "incremental": true,
+    "paths": {
+      "@middleware/*": ["middleware/*"],
+      "@auth/*": ["v1/auth/*"],
+      "@session/*": ["v1/session/*"],
+      "@user/*": ["v1/user/*"],
+      "@global/*": ["v1/*"],
+      "@restApi/*": ["restApi/*"],
+      "@utils/*": ["utils/*"],
+      "@guard/*": ["guard/*"],
+      "@database/*": ["database/*"],
+      "@config/*": ["config/*"]
+    }
   },
   "exclude": ["node_modules", "dist"]
 }

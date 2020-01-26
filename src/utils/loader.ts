@@ -1,4 +1,4 @@
-import * as requireAll from 'require-all';
+import requireAll from 'require-all';
 
 export const loader = (dirname: String, filter: RegExp): any => {
   var path = requireAll({
